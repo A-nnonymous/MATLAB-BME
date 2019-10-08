@@ -8,7 +8,7 @@ plot(t,y)
 function [aSol,adtSol] = Pro_N_De(k0,k1)       %封装函数
 syms a(t) 
 eqn = diff(a,t) ==k0 -k1*a;
-InitCond = [a(0)==1];               %未给出初始浓度条件，为了作图不妨设置为1
+InitCond = a(0)==1;               %未给出初始浓度条件，为了作图不妨设置为1
 aSol(t) = dsolve(eqn, InitCond);
 adtSol(t) = diff(aSol(t), t) ;
 end
